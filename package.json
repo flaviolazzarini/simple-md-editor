@@ -6,7 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "DEBUG=true electron .",
-    "build:macos": "electron-builder --macos --dir"
+    "build:macos": "electron-builder --macos --dir",
+    "publish:github": "electron-builder --mac -p always"
+  },
+  "build": {
+    "appId": "li.lazzarini.markdown-editor",
+    "publish": {
+      "provider": "github",
+      "owner": "flaviolazzarini",
+      "repo": "simple-md-editor"
+    }
   },
   "keywords": [],
   "author": "",
@@ -16,6 +25,7 @@
     "electron-builder": "^22.8.0"
   },
   "dependencies": {
+    "electron-updater": "^4.3.4",
     "simplemde": "^1.11.2"
   }
 }
